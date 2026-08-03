@@ -1,0 +1,10 @@
+{
+  "latest": "4.0.0",
+  "min_required": "4.0.0",
+  "build": 1,
+  "channel": "release",
+  "force": false,
+  "url": "",
+  "sha256": "",
+  "notes": "TG Matrix v4.0.0 基线（尚未上传安装包）"
+}
