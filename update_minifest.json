@@ -1,6 +1,6 @@
 {
-  "latest": "4.0.0",
-  "min_required": "4.0.0",
+  "latest": "4.0.1",
+  "min_required": "4.0.1",
   "build": 9,
   "channel": "release",
   "force": true,
