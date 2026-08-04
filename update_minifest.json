@@ -1,10 +1,10 @@
 {
   "latest": "4.0.1",
   "min_required": "4.0.1",
-  "build": 9,
+  "build": 10,
   "channel": "release",
   "force": true,
   "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v4.0.1/TGMatrix-4.0.1-win64.zip",
-  "sha256": "0e7529d1bd89f09ffebe4e7f4e655fa32c006776896109aa85c37a10bb1e201b",
+  "sha256": "88ca5fdf0bc17ce99386563d80156efbca106c06dbaba1ee8bea0370b89d60c8",
   "notes": "TG Matrix v4.0.1"
 }
