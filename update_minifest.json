@@ -4,7 +4,7 @@
   "build": 4,
   "channel": "release",
   "force": true,
-  "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v5.0.0/TGMatrix-5.0.1-win64.zip",
+  "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v5.0.1/TGMatrix-5.0.1-win64.zip",
   "sha256": "df4acdd4ce742e6d59addcdeb4c8a9df54e6e68e0b3265bd2be7e986cb39ae05",
   "notes": "TG Matrix v5.0.1"
 }
