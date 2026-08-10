@@ -1,10 +1,10 @@
 {
-  "latest": "5.0.1",
-  "min_required": "5.0.1",
-  "build": 4,
+  "latest": "5.0.2",
+  "min_required": "5.0.2",
+  "build": 5,
   "channel": "release",
   "force": true,
-  "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v5.0.1/TGMatrix-5.0.1-win64.zip",
-  "sha256": "df4acdd4ce742e6d59addcdeb4c8a9df54e6e68e0b3265bd2be7e986cb39ae05",
-  "notes": "TG Matrix v5.0.1"
+  "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v5.0.2/TGMatrix-5.0.2-win64.zip",
+  "sha256": "2097019a6be9abc5d68fa15bb8eac82e6dcd2e87fbee989048392f3a62c71322",
+  "notes": "TG Matrix v5.0.2"
 }
