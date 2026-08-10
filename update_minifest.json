@@ -1,7 +1,7 @@
 {
   "latest": "5.0.2",
   "min_required": "5.0.2",
-  "build": 5,
+  "build": 6,
   "channel": "release",
   "force": true,
   "url": "https://github.com/coolex86/The-Matrix-Updates/releases/download/v5.0.2/TGMatrix-5.0.2-win64.zip",
