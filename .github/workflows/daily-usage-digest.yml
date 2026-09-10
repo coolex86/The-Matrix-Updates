@@ -1,1 +1,59 @@
+# 每天马来西亚 09:00（UTC 01:00）发上一窗口 PDF 日报。
+# 仓库：coolex86/The-Matrix-Updates（可 workflow_dispatch 手动补发）
+name: daily-usage-digest
 
+on:
+  schedule:
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "已发过也重发"
+        type: boolean
+        default: true
+      day:
+        description: "报表日 YYYY-MM-DD，留空则自动"
+        required: false
+        type: string
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install CJK fonts
+        run: sudo apt-get update && sudo apt-get install -y fonts-noto-cjk-core
+
+      - name: Install Python deps
+        run: pip install supabase reportlab
+
+      - name: Send digest
+        env:
+          DIGEST_SUPABASE_URL: ${{ secrets.DIGEST_SUPABASE_URL }}
+          DIGEST_SUPABASE_ANON_KEY: ${{ secrets.DIGEST_SUPABASE_ANON_KEY }}
+          DIGEST_ADMIN_EMAIL: ${{ secrets.DIGEST_ADMIN_EMAIL }}
+          DIGEST_ADMIN_PASSWORD: ${{ secrets.DIGEST_ADMIN_PASSWORD }}
+          DIGEST_SMTP_HOST: smtp.gmail.com
+          DIGEST_SMTP_PORT: "587"
+          DIGEST_SMTP_USER: ${{ secrets.DIGEST_SMTP_USER }}
+          DIGEST_SMTP_PASSWORD: ${{ secrets.DIGEST_SMTP_PASSWORD }}
+          DIGEST_FROM_EMAIL: ${{ secrets.DIGEST_FROM_EMAIL }}
+          DIGEST_TO_EMAILS: ${{ secrets.DIGEST_TO_EMAILS }}
+        run: |
+          set -e
+          ARGS=()
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            if [ "${{ github.event.inputs.force }}" = "true" ]; then
+              ARGS+=(--force)
+            fi
+            DAY="${{ github.event.inputs.day }}"
+            if [ -n "$DAY" ]; then
+              ARGS+=(--day "$DAY")
+            fi
+          fi
+          python tools/send_usage_digest.py "${ARGS[@]}"
